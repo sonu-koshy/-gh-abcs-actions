@@ -1,8 +1,10 @@
 name: 04-1. Call Reusable Workflow Templates
 
 on: 
-  [workflow_dispatch]
-
+  push: 
+    branches: [main]
+  workflow_dispatch:
+  
 jobs:
   call_greet_everyone_workflow_job:
     uses: githubabcs/gh-abcs-actions/.github/workflows/greet-everyone.yml@main
@@ -14,4 +16,4 @@ jobs:
 
   call_demo_workflow_job:
     needs: call_greet_everyone_workflow_job
-    uses: githubabcs/gh-abcs-actions/.github/workflows/github-actions-demo.yml@main
+    uses: jacqueline-lin/gh-abcs-actions/.github/workflows/github-actions-demo.yml@main
